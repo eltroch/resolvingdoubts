@@ -1,0 +1,9 @@
+.badge-notify {
+    background: red;
+    position: relative;
+    top: 0px;
+    color: white;
+    font-weight: bold;
+    right: -20px;
+    border-radius: 40%;
+}

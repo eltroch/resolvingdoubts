@@ -1,0 +1,95 @@
+<div class="bg div-content container col-md-12" style="padding-top: 4em">
+
+
+    <mat-card class=" bgg mdc-card col-md-5" [class.mat-elevation-z11]="true" style="float: none; margin: 0 auto ">
+
+
+        <mat-card-content>
+
+            <form class="form-login col-md-12 justify-content-center align-items-center" [formGroup]="loginForm" novalidate>
+
+                <div class="row div-image justify-content-center align-self-center">
+                    <img src="./assets/images/escudo.png">
+                </div>
+                <div class="form-group">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                <img src="../../../assets/images/user_login.png">
+              </span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="email" placeholder="Correo electronico" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                <img src="../../../assets/images/key_login.png">
+              </span>
+                        </div>
+                        <input type="password" class="form-control" formControlName="pass" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+
+                </div>
+
+
+                <div *ngIf="registro" class="form-group">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                <img src="../../../assets/images/user_login.png">
+              </span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+
+                </div>
+
+                <div class="row form-group">
+
+
+                    <div class="col-md-6 ">
+                        <button type="submit" class="btn btn-primary btn-block" (click)="btn1OnClick()">{{btn1}}</button>
+
+                    </div>
+
+
+                    <div class="col-md-6 ">
+                        <button type="submit" class="btn btn-outline-primary  btn-block" (click)="btn2OnClick()">{{btn2}}</button>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+
+
+</div>
+<br/>
+<br/>
+<footer class="page-footer font-small special-color-dark pt-4">
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> unicordoba.edu.co</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>

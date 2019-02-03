@@ -1,0 +1,74 @@
+<div class="container">
+    <div>
+        <h4>Preguntas destacadas </h4>
+    </div>
+
+</div>
+
+<div *ngFor='let pregunta of preguntas'>
+    <div class="col-sm-8 col-md-11 contact-form" style="float: left;margin: 0.5em">
+
+    </div>
+    <div class="col-sm-8 col-md-11 contact-form" style="float: left;margin: 0 auto">
+        <mat-card *ngIf="pregunta" class="mdc-card" [class.mat-elevation-z8]="true">
+
+            <div class="container">
+                <mat-grid-list style="margin-top: 0.2em" cols="4" rowHeight="25">
+                    <mat-grid-tile [colspan]="3" [rowspan]="2">
+                        <div class="container">
+                            <h6>
+                                {{pregunta.titulo}}
+                            </h6>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="3">
+
+
+                        <div class="container">
+                            <span class="badge badge-notify">{{pregunta.like}}</span>
+
+                            <img style="margin-right: 2%" src="../../../assets/images/like.png " width="28 " height="28 " alt=" ">
+                        </div>
+                        <div class="container">
+                            <span class="badge badge-notify">{{pregunta.dislike}}</span>
+                            <img style="margin-right: 2%" src="../../../assets/images/dislike.png " width="28 " height="28 " alt=" ">
+                        </div>
+                        <div class="container">
+                            <span class="badge badge-notify">{{pregunta.views}}</span>
+                            <img style="margin-right: 2%" src="../../../assets/images/eye-button.png " width="28 " height="28 " alt=" ">
+                        </div>
+                        <div class="container">
+                            <span class="badge badge-notify">{{pregunta.respuestas}}</span>
+                            <img src="../../../assets/images/back.png " width="28 " height="28 " alt=" ">
+
+                        </div>
+
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+                        <div class="container">
+                            <button *ngFor="let tema of pregunta.temas" class="btn btn-primary btn-sm  " type="submit " style="margin-right: 4px; font-weight: bold;   font-size: 10px;">{{tema}}</button>
+
+                        </div>
+
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                        <div class="container" style="float: right;margin: 0 auto">
+                            <h6 style="color: #9F99A1 ;text-align: right">
+                                {{ pregunta.fecha }}
+
+                            </h6>
+                        </div>
+
+
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+
+
+            </div>
+
+
+
+        </mat-card>
+
+    </div>

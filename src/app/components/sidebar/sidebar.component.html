@@ -1,0 +1,49 @@
+<nav id="sidebar" class="sidebar" style="background-color: #131212;">
+    <div class="sidebar-content ">
+        <perfect-scrollbar>
+            <div class="sidebar-header " style="margin-top: 0.45em; margin-bottom: 0.45em;background-color: #131212;">
+                <a class="text-primary">Resolving Doubts</a>
+            </div>
+
+
+            <div class="sidebar-profile ">
+                <div class="user-pic ">
+                    <img class="img-responsive img-rounded " src="/assets/images/user.jpg " alt="User picture ">
+                </div>
+                <div class="user-info ">
+                    <span class="user-name ">
+            <strong>{{usuario.nombres}}</strong>
+          </span>
+                    <span class="user-role ">{{usuario.email}}</span>
+                    <span class="user-status ">
+            <i class="fa fa-circle "></i>
+            
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar-menu ">
+                <ul>
+                    <li *ngFor="let menu of menus " [ngClass]="{ 'active': menu.active , 'sidebar-dropdown':menu.type==='dropdown' , 'header-menu':menu.type==='header' } ">
+                        <span class="btn" *ngIf="menu.type==='header' ">{{menu.title}}</span>
+                        <a *ngIf="menu.type !=='header' " (click)='toggle(menu)'>
+                            <img src="../../../assets/images/{{menu.icon}}" width="24 " height="24 " alt=" ">
+                            <span class="btn" style="color:whitesmoke; margin-left: 7px;">{{menu.title}}</span>
+
+                        </a>
+                        <div *ngIf="menu.type==='dropdown' " class="sidebar-submenu " [@slide]="getState(menu) ">
+                            <ul>
+                                <li *ngFor="let submenu of menu.submenus ">
+                                    <a class="btn"> {{submenu.title}}
+                    <span *ngIf="submenu.badge " class="badge badge-pill " [ngClass]="submenu.badge.class ">{{submenu.badge.text}}</span>
+                  </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </perfect-scrollbar>
+    </div>
+
+</nav>
