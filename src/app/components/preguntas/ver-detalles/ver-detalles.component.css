@@ -1,0 +1,5 @@
+#borderdiv {
+    border: 2px solid red;
+    background: red;
+    border-radius: 50px 20px;
+}

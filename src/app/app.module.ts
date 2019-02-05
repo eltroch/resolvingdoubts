@@ -25,6 +25,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { CrearPreguntaComponent } from './components/preguntas/crear-pregunta/crear-pregunta.component';
+import { VerDetallesComponent } from './components/preguntas/ver-detalles/ver-detalles.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -38,7 +39,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavbarComponent,
     SidebarComponent,
     PreguntasComponent,
-    CrearPreguntaComponent
+    CrearPreguntaComponent,
+    VerDetallesComponent
   ],
   imports: [
     BrowserModule,

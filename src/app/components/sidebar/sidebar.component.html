@@ -12,7 +12,7 @@
                 </div>
                 <div class="user-info ">
                     <span class="user-name ">
-            <strong>{{usuario.nombres}}</strong>
+            <strong>{{usuario.nombres | titlecase }}</strong>
           </span>
                     <span class="user-role ">{{usuario.email}}</span>
                     <span class="user-status ">
@@ -34,7 +34,7 @@
                         <div *ngIf="menu.type==='dropdown' " class="sidebar-submenu " [@slide]="getState(menu) ">
                             <ul>
                                 <li *ngFor="let submenu of menu.submenus ">
-                                    <a class="btn"> {{submenu.title}}
+                                    <a class="btn" routerLink="/{{submenu.ruta}}" routerLinkActive="active"> {{submenu.title}}
                     <span *ngIf="submenu.badge " class="badge badge-pill " [ngClass]="submenu.badge.class ">{{submenu.badge.text}}</span>
                   </a>
                                 </li>

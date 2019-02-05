@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PreguntasService } from 'src/app/services/preguntas.service';
 import { Preguntas } from '../../modelos/preguntas';
 import { count } from 'rxjs/operators';
 import { utf8Encode } from '@angular/compiler/src/util';
+import { Router } from '@angular/router';
 
 export interface Tile {
   color: string;
@@ -17,27 +18,38 @@ export interface Tile {
   styleUrls: ['./preguntas.component.css']
 })
 export class PreguntasComponent implements OnInit {
+  @Output() emitEvent:EventEmitter<string> = new EventEmitter<string>();
+
  
   preguntas:Preguntas[] = [];
+  loading:boolean;
   
 
 
 
-  constructor(private _preguntasService:PreguntasService) {
+  constructor(private _preguntasService:PreguntasService,private _router:Router) {
     this.cargarPreguntasDestacadas();
    }
 
   
 
+   verDetallePregunta(id)
+   {
+    this._router.navigate(['/preguntas',id]);
+
+
+   }
   ngOnInit() {
   }
 
   cargarPreguntasDestacadas(): void {
 
+    this.loading=true;
     this._preguntasService.getPreguntasDestacadas()
     .subscribe((res: any) => {
 
 
+      this.loading=false;
 
       this.preguntas=res.datos;
 
@@ -47,6 +59,9 @@ export class PreguntasComponent implements OnInit {
     (err) => {
 
       alert("No se han podido cargar las preguntas");
+      console.log(err);
+      this.loading=false;
+
 
     }
   );
@@ -60,7 +75,7 @@ export class PreguntasComponent implements OnInit {
       let id_pregunta=-1;
    
     
-      let preguntas: Preguntas[]=new Array(30);
+      let preguntas: Preguntas[]=new Array();
       
       let i=0;
       let last_i=0;
@@ -84,7 +99,7 @@ export class PreguntasComponent implements OnInit {
         }else{
         
         
-          if(i!=ultimo-1){
+         
         if(pregunta.id_pregunta!=preguntas[last_i-1].id_pregunta)
         {
           preguntas[last_i]=pregunta;
@@ -95,7 +110,7 @@ export class PreguntasComponent implements OnInit {
 
           
         }
-      }
+      
       }
       
        temas[last_t]=pregunta.tema;

@@ -37,11 +37,17 @@ export class SidebarComponent implements OnInit {
     ,
       submenus: [
         {
-          title: 'Hacer una pregunta'
-          
+          title: 'Mostrar Destacadas',
+          ruta: 'preguntas/destacadas'
+
         },
         {
-          title: 'Ver mis preguntas'
+          title: 'Hacer una pregunta',
+          ruta: 'preguntas/registrar'
+
+        },
+        {
+          title: 'Ver mis preguntas '
         }
       ]
     },

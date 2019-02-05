@@ -1,0 +1,63 @@
+<div>
+    <div class="col-sm-8 col-md-11 contact-form" style="float: left;margin: 0.5em">
+
+    </div>
+
+    <div class="loading  row col-md-12" *ngIf="loading">
+
+        <img src="../../../assets/images/loading.gif" style="float: none;margin: 0 auto; " />
+
+    </div>
+    <div *ngIf="!loading" class="col-sm-8 col-md-11 contact-form" style="float: left;margin: 0 auto">
+        <mat-card class="mdc-card" [class.mat-elevation-z8]="true">
+
+
+
+            <div class="col-md-12 form-group float">
+                <img class="float-right" height="28px" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDBDMTE0LjgzMywwLDAsMTE0Ljg0NCwwLDI1NnMxMTQuODMzLDI1NiwyNTYsMjU2czI1Ni0xMTQuODQ0LDI1Ni0yNTZTMzk3LjE2NywwLDI1NiwweiBNMTkyLDMzMC42NjcgICAgYzAsMTcuNjQ2LTE0LjM1NCwzMi0zMiwzMmgtNDIuNjY3Yy0xNy42NDYsMC0zMi0xNC4zNTQtMzItMzJWMjI0YzAtMTcuNjQ2LDE0LjM1NC0zMiwzMi0zMkgxNjBjMTcuNjQ2LDAsMzIsMTQuMzU0LDMyLDMyVjMzMC42NjcgICAgeiBNNDE5LjQzOCwyOTEuNWwtMzQuMzU0LDU1LjE0NmMtNi43NzEsMTAuMTM1LTE3Ljc1LDE2LjAyMS0yOS42MDQsMTYuMDIxSDI4OGMtNDEuMTY3LDAtNzQuNjY3LTMzLjUtNzQuNjY3LTc0LjY2N3YtNTAuOTkgICAgYzAtMjAuMDQyLDguMjUtMzkuNTYzLDIyLjYyNS01My41NDJsNzUuODk2LTczLjc4MWMyLTEuOTM4LDQuNjY3LTMuMDIxLDcuNDM4LTMuMDIxSDMyNGMxNi45MTcsMCwzMC42NjcsMTMuNzUsMzAuNjY3LDMwLjY0NiAgICBjMCw0Ljc1LTEuMTI1LDkuNS0zLjI3MSwxMy43NGwtMTkuNjg4LDM4LjQ2OWwxLjQ3OSwyLjQ1OGw0MC4xNDYsMC4wMUMzOTYuODU0LDE5Miw0MTYsMjExLjE0Niw0MTYsMjM0LjY1NnYzLjE0Nmw1LjEwNCw4LjIyOSAgICBjNC44NzUsNy4zMTMsNS41NjMsMTUuNTUyLDUuNTYzLDIyLjYwNEM0MjYuNjY3LDI3Ni40NDgsNDI0LjE2NywyODQuMzU0LDQxOS40MzgsMjkxLjV6IiBmaWxsPSIjMDA2REYwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="
+                />
+
+
+
+                <img class="float-right" height="28px" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDBDMTE0LjgzMywwLDAsMTE0Ljg0NCwwLDI1NnMxMTQuODMzLDI1NiwyNTYsMjU2czI1Ni0xMTQuODQ0LDI1Ni0yNTZTMzk3LjE2NywwLDI1NiwweiBNMTkyLDI4OCAgICBjMCwxNy42NDYtMTQuMzU0LDMyLTMyLDMyaC00Mi42NjdjLTE3LjY0NiwwLTMyLTE0LjM1NC0zMi0zMlYxODEuMzMzYzAtMTcuNjQ2LDE0LjM1NC0zMiwzMi0zMkgxNjBjMTcuNjQ2LDAsMzIsMTQuMzU0LDMyLDMyVjI4OCAgICB6IE00MjAuOTE3LDI2Ni4yNkw0MTYsMjc0LjE5OHYzLjE0NmMwLDIzLjUxLTE5LjE0Niw0Mi42NTYtNDIuNjY3LDQyLjY2N2wtNDAuMTQ2LDAuMDFsLTEuNDc5LDIuNDU4bDE5LjY2NywzOC40MDYgICAgYzIuMTY3LDQuMzAyLDMuMjkyLDkuMDUyLDMuMjkyLDEzLjgwMmMwLDE2Ljg5Ni0xMy43NSwzMC42NDYtMzAuNjY3LDMwLjY0NmgtNC43MDhjLTIuNzcxLDAtNS40MzgtMS4wODMtNy40MzgtMy4wMjEgICAgbC03NS44OTYtNzMuNzgxYy0xNC4zNzUtMTMuOTc5LTIyLjYyNS0zMy41LTIyLjYyNS01My41NDJWMjI0YzAtNDEuMTY3LDMzLjUtNzQuNjY3LDc0LjY2Ny03NC42NjdoNjcuNDc5ICAgIGMxMS44NTQsMCwyMi44MzMsNS44ODUsMjkuNDE3LDE1Ljc1bDM0LjcwOCw1NS42NjdjNC41NjMsNi44OTYsNy4wNjMsMTQuODAyLDcuMDYzLDIyLjYxNSAgICBDNDI2LjY2NywyNTAuNDE3LDQyNS45NzksMjU4LjY1Niw0MjAuOTE3LDI2Ni4yNnoiIGZpbGw9IiMwMDZERjAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
+                />
+
+            </div>
+
+            <div class="container">
+                <div class="container">
+                    <strong> {{pregunta.usuario}} </strong> <span>  preguntó:</span>
+
+                </div>
+
+
+                <div class="col-xs-6 col-md-12 form-group " style="margin-top: 1em">
+                    <h6 style="  font-weight: bold;"> {{pregunta.titulo}}</h6>
+                </div>
+
+                <div class="col-xs-6 col-md-12 form-group ">
+                    <h6> {{pregunta.descripcion}}</h6>
+                </div>
+
+
+                <div class="col-xs-12 col-md-12 form-group">
+
+                    <img style="margin-top: 1em" *ngIf="rutaImagen != ''" class="img-responsive" mat-card-image src="{{rutaImagen}}">
+                    <div class="custom-file">
+
+                    </div>
+
+                </div>
+
+                <div class="container">
+                    <button *ngFor="let tema of pregunta.temas" class="btn btn-primary btn-sm  " type="submit " style="margin-right: 4px; font-weight: bold;   font-size: 10px;">{{tema}}</button>
+
+                </div>
+
+            </div>
+
+
+
+        </mat-card>
+
+    </div>

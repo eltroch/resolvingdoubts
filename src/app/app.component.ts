@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { StorageService } from './services/storage.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,5 +8,13 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent {
   title = 'resolvingdoubts';
+
+  constructor(
+    private storageService: StorageService) { 
+  }
+  public IsLogin() {
+    return this.storageService.isAuthenticated();
+  }
+  
 
 }

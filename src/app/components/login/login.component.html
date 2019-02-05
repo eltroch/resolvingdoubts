@@ -21,6 +21,9 @@
                         </div>
                         <input type="text" class="form-control" formControlName="email" placeholder="Correo electronico" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
+                    <p *ngIf="loginForm.get('email').hasError('email')" class="error" style="color: red">
+                        El correo electronico indicado no es valido.
+                    </p>
 
 
                 </div>
