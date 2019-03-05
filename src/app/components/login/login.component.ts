@@ -92,6 +92,7 @@ export class LoginComponent implements OnInit {
         data.token=datos['token'] ;
         this.storageService.setCurrentSession(data);
         this._router.navigate(['/home']);
+        location.reload();
 
         
       } else {

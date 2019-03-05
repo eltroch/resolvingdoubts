@@ -95,6 +95,7 @@ export class CrearPreguntaComponent implements OnInit {
         if(this.pregunta.temas.length>0)
         {
           let usuario=this._sts.getUser();
+           
           let imagen='';
           if(this.nombreImagen!="No hay imagen selecionada")
           {

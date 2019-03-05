@@ -26,6 +26,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { CrearPreguntaComponent } from './components/preguntas/crear-pregunta/crear-pregunta.component';
 import { VerDetallesComponent } from './components/preguntas/ver-detalles/ver-detalles.component';
+import { EditarPreguntaComponent } from './components/preguntas/editar-pregunta/editar-pregunta.component';
+import { MisPreguntaComponent } from './components/preguntas/mis-pregunta/mis-pregunta.component';
+import { EstadisticasComponent } from './components/preguntas/estadisticas/estadisticas.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -40,7 +43,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     PreguntasComponent,
     CrearPreguntaComponent,
-    VerDetallesComponent
+    VerDetallesComponent,
+    EditarPreguntaComponent,
+    MisPreguntaComponent,
+    EstadisticasComponent
   ],
   imports: [
     BrowserModule,

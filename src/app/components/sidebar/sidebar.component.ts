@@ -37,6 +37,11 @@ export class SidebarComponent implements OnInit {
     ,
       submenus: [
         {
+          title: 'Estadisticas ',
+          ruta: 'estadisticas'
+
+        },
+        {
           title: 'Mostrar Destacadas',
           ruta: 'preguntas/destacadas'
 
@@ -47,7 +52,8 @@ export class SidebarComponent implements OnInit {
 
         },
         {
-          title: 'Ver mis preguntas '
+          title: 'Ver mis preguntas ',
+          ruta: 'preguntas/mis-preguntas'
         }
       ]
     },

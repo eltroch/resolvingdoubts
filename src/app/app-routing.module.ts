@@ -8,16 +8,21 @@ import { CrearPreguntaComponent } from './components/preguntas/crear-pregunta/cr
 import { Preguntas } from './modelos/preguntas';
 import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { VerDetallesComponent } from './components/preguntas/ver-detalles/ver-detalles.component';
+import { MisPreguntaComponent } from './components/preguntas/mis-pregunta/mis-pregunta.component';
+import { EstadisticasComponent } from './components/preguntas/estadisticas/estadisticas.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [ AuthorizatedGuard ]  },
+  { path: 'home', component: HomeComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
  { path: 'app-root', component: AppComponent },  
  { path: 'preguntas/registrar', component: CrearPreguntaComponent,canActivate: [ AuthorizatedGuard ]  },  
- { path: 'preguntas/destacadas', component: PreguntasComponent ,canActivate: [ AuthorizatedGuard ] },  
- { path: 'preguntas/destacadas', component: PreguntasComponent ,canActivate: [ AuthorizatedGuard ] },  
- { path: 'preguntas/:id_pregunta', component: VerDetallesComponent,canActivate: [ AuthorizatedGuard ] },    
+ { path: 'preguntas/destacadas', component: PreguntasComponent },  
+ { path: 'preguntas/mis-preguntas', component: MisPreguntaComponent },  
+ { path: 'preguntas/:id_pregunta', component: VerDetallesComponent},   
+ { path: 'preguntas/busqueda/:texto', component: PreguntasComponent },
+ { path: 'estadisticas', component: EstadisticasComponent },
+
 
 
   { path: 'login', component: LoginComponent },
@@ -34,7 +39,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

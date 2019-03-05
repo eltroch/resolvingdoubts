@@ -24,16 +24,17 @@ export class PreguntasService {
 
   constructor(private http: HttpClient,private _config:ConfigService,private localStorage: StorageService) { 
     this.url=_config.getUrlAPI()+'/'+this.coleccion;
-    this.getToken();
-    this.user=this.localStorage.getUser();
+    //this.getToken();
+    //this.user=this.localStorage.getUser();
   }
 
 
   public postFileImagen(imagenParaSubir: File){
 
+    let usuario=this.localStorage.getUser();
     
     const formData = new FormData(); 
-    formData.append('imagenPropia', imagenParaSubir, this.user.email+'-'+imagenParaSubir.name);
+    formData.append('imagenPropia', imagenParaSubir, usuario.email+'-'+imagenParaSubir.name);
     return this.http.post(`${this.url}/cargarImagen`, formData);
 
 
@@ -53,12 +54,36 @@ export class PreguntasService {
                       })
                     );
   }
+
+
+
+
   getPreguntasDestacadas() {
     return this.http.get(`${this.url}/destacadas`);
   }
+  getMisPreguntas() {
+    let u=this.localStorage.getUser();
+    
+    return this.http.get(`${this.url}/mias/${u.email}`);
+  }
+  getBusqueda(dato) {
+    
+    return this.http.get(`${this.url}/busqueda/${dato}`);
+  }
+
 
   getPregunta(id: string) {
     return this.http.get(`${this.url}/`+id);
+  }
+
+  likePregunta(id: number) {
+    return this.http.get(`${this.url}/like/`+id);
+  }
+  dislikePregunta(id: number) {
+    return this.http.get(`${this.url}/dislike/`+id);
+  }
+  viewPregunta(id: number) {
+    return this.http.get(`${this.url}/view/`+id);
   }
 
 }

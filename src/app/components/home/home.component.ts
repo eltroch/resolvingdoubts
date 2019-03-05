@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private _router:Router) { 
+
+
+  pregunta=0;
+  constructor(private _router:Router,private _ss:StorageService) { 
+
+    //console.log("home");
+    //console.log(_ss.isAuthenticated());
+
+  
+       this._router.navigate(['/estadisticas']);
+    
+
    
   }
 
   ngOnInit() {
-
-    this._router.navigate(['/preguntas/destacadas']);
+    //this._router.navigate(['/preguntas/destacadas']);
   }
 
+  verPregunta(pregunta)
+{
+  this.pregunta=pregunta;
+
+}
+
+  public IsLogin() {
+    return this._ss.isAuthenticated();
+  }
+  
 }

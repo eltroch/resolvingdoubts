@@ -1,56 +1,66 @@
 <div>
-    <div class="col-sm-8 col-md-11 contact-form" style="float: left;margin: 0.5em">
-
-    </div>
 
     <div class="loading  row col-md-12" *ngIf="loading">
 
-        <img src="../../../assets/images/loading.gif" style="float: none;margin: 0 auto; " />
+        <img src="./assets/images/loading.gif" style="float: none;margin: 0 auto; " />
 
     </div>
-    <div *ngIf="!loading" class="col-sm-8 col-md-11 contact-form" style="float: left;margin: 0 auto">
-        <mat-card class="mdc-card" [class.mat-elevation-z8]="true">
+    <div *ngIf="!loading" class="col-sm-8 col-md-11 contact-form mb-4" style="float: left;margin: 0 auto">
+        <mat-card class="mdc-card pr-0" [class.mat-elevation-z8]="true">
 
 
+            <div class="w-100 row   pr-0">
+                <div class="pl-4   centrarV" style="width: 90%;">
+                    <strong> {{pregunta.usuario}}  &nbsp; </strong> <span>   preguntó:</span>
 
-            <div class="col-md-12 form-group float">
-                <img class="float-right" height="28px" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDBDMTE0LjgzMywwLDAsMTE0Ljg0NCwwLDI1NnMxMTQuODMzLDI1NiwyNTYsMjU2czI1Ni0xMTQuODQ0LDI1Ni0yNTZTMzk3LjE2NywwLDI1NiwweiBNMTkyLDMzMC42NjcgICAgYzAsMTcuNjQ2LTE0LjM1NCwzMi0zMiwzMmgtNDIuNjY3Yy0xNy42NDYsMC0zMi0xNC4zNTQtMzItMzJWMjI0YzAtMTcuNjQ2LDE0LjM1NC0zMiwzMi0zMkgxNjBjMTcuNjQ2LDAsMzIsMTQuMzU0LDMyLDMyVjMzMC42NjcgICAgeiBNNDE5LjQzOCwyOTEuNWwtMzQuMzU0LDU1LjE0NmMtNi43NzEsMTAuMTM1LTE3Ljc1LDE2LjAyMS0yOS42MDQsMTYuMDIxSDI4OGMtNDEuMTY3LDAtNzQuNjY3LTMzLjUtNzQuNjY3LTc0LjY2N3YtNTAuOTkgICAgYzAtMjAuMDQyLDguMjUtMzkuNTYzLDIyLjYyNS01My41NDJsNzUuODk2LTczLjc4MWMyLTEuOTM4LDQuNjY3LTMuMDIxLDcuNDM4LTMuMDIxSDMyNGMxNi45MTcsMCwzMC42NjcsMTMuNzUsMzAuNjY3LDMwLjY0NiAgICBjMCw0Ljc1LTEuMTI1LDkuNS0zLjI3MSwxMy43NGwtMTkuNjg4LDM4LjQ2OWwxLjQ3OSwyLjQ1OGw0MC4xNDYsMC4wMUMzOTYuODU0LDE5Miw0MTYsMjExLjE0Niw0MTYsMjM0LjY1NnYzLjE0Nmw1LjEwNCw4LjIyOSAgICBjNC44NzUsNy4zMTMsNS41NjMsMTUuNTUyLDUuNTYzLDIyLjYwNEM0MjYuNjY3LDI3Ni40NDgsNDI0LjE2NywyODQuMzU0LDQxOS40MzgsMjkxLjV6IiBmaWxsPSIjMDA2REYwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="
-                />
+                </div>
+                <div class="form-group   pr-0 row  " style="width: 10%">
 
 
+                    <div class="w-50 pr-0 container">
+                        <span class="badge badge-notify">{{pregunta.like}}</span>
+                        <img style="margin-right: 2%" (click)="like()" src="./assets/images/like.png " width="28 " height="28 " alt=" ">
+                    </div>
 
-                <img class="float-right" height="28px" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDBDMTE0LjgzMywwLDAsMTE0Ljg0NCwwLDI1NnMxMTQuODMzLDI1NiwyNTYsMjU2czI1Ni0xMTQuODQ0LDI1Ni0yNTZTMzk3LjE2NywwLDI1NiwweiBNMTkyLDI4OCAgICBjMCwxNy42NDYtMTQuMzU0LDMyLTMyLDMyaC00Mi42NjdjLTE3LjY0NiwwLTMyLTE0LjM1NC0zMi0zMlYxODEuMzMzYzAtMTcuNjQ2LDE0LjM1NC0zMiwzMi0zMkgxNjBjMTcuNjQ2LDAsMzIsMTQuMzU0LDMyLDMyVjI4OCAgICB6IE00MjAuOTE3LDI2Ni4yNkw0MTYsMjc0LjE5OHYzLjE0NmMwLDIzLjUxLTE5LjE0Niw0Mi42NTYtNDIuNjY3LDQyLjY2N2wtNDAuMTQ2LDAuMDFsLTEuNDc5LDIuNDU4bDE5LjY2NywzOC40MDYgICAgYzIuMTY3LDQuMzAyLDMuMjkyLDkuMDUyLDMuMjkyLDEzLjgwMmMwLDE2Ljg5Ni0xMy43NSwzMC42NDYtMzAuNjY3LDMwLjY0NmgtNC43MDhjLTIuNzcxLDAtNS40MzgtMS4wODMtNy40MzgtMy4wMjEgICAgbC03NS44OTYtNzMuNzgxYy0xNC4zNzUtMTMuOTc5LTIyLjYyNS0zMy41LTIyLjYyNS01My41NDJWMjI0YzAtNDEuMTY3LDMzLjUtNzQuNjY3LDc0LjY2Ny03NC42NjdoNjcuNDc5ICAgIGMxMS44NTQsMCwyMi44MzMsNS44ODUsMjkuNDE3LDE1Ljc1bDM0LjcwOCw1NS42NjdjNC41NjMsNi44OTYsNy4wNjMsMTQuODAyLDcuMDYzLDIyLjYxNSAgICBDNDI2LjY2NywyNTAuNDE3LDQyNS45NzksMjU4LjY1Niw0MjAuOTE3LDI2Ni4yNnoiIGZpbGw9IiMwMDZERjAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
-                />
+                    <div class="w-50 pr-0 container">
+                        <span class="badge badge-notify">{{pregunta.dislike}}</span>
+                        <img style="margin-right: 2%" (click)="dislike()" src="./assets/images/dislike.png " width="28 " height="28 " alt=" ">
+                    </div>
+                </div>
 
             </div>
 
+
             <div class="container">
-                <div class="container">
-                    <strong> {{pregunta.usuario}} </strong> <span>  preguntó:</span>
 
-                </div>
-
-
-                <div class="col-xs-6 col-md-12 form-group " style="margin-top: 1em">
+                <div class="w-100 form-group ">
                     <h6 style="  font-weight: bold;"> {{pregunta.titulo}}</h6>
                 </div>
 
-                <div class="col-xs-6 col-md-12 form-group ">
+                <div class="w-100 form-group ">
                     <h6> {{pregunta.descripcion}}</h6>
                 </div>
 
 
-                <div class="col-xs-12 col-md-12 form-group">
+                <div class="w-100 form-group" *ngIf="rutaImagen != ''">
 
-                    <img style="margin-top: 1em" *ngIf="rutaImagen != ''" class="img-responsive" mat-card-image src="{{rutaImagen}}">
+                    <img style="margin-top: 1em" class="img-responsive" mat-card-image src="{{rutaImagen}}">
                     <div class="custom-file">
 
                     </div>
 
                 </div>
 
-                <div class="container">
-                    <button *ngFor="let tema of pregunta.temas" class="btn btn-primary btn-sm  " type="submit " style="margin-right: 4px; font-weight: bold;   font-size: 10px;">{{tema}}</button>
+                <div class="w-100 container   pr-0 row">
+
+                    <div style="width: 87%">
+                        <button *ngFor="let tema of pregunta.temas" class="btn btn-primary btn-sm  " type="submit " style="margin-right: 4px; font-weight: bold;   font-size: 10px;">{{tema}}</button>
+
+                    </div>
+
+                    <div *ngIf="puedeResponder" style="width:13%  ">
+                        <button class="btn btn-primary btn-block" (click)="clickResponder()">Responder</button>
+                    </div>
 
                 </div>
 
@@ -61,3 +71,89 @@
         </mat-card>
 
     </div>
+
+    <div *ngIf="!loading && verFormResponder" class="col-sm-8 col-md-11 contact-form mb-4" style="float: left;margin: 0 auto">
+        <mat-card class="mdc-card pr-0" [class.mat-elevation-z8]="true">
+
+            <div class="container">
+                <div class="w-100 row ">
+                    <h6 style="  font-weight: bold;">Responder a {{pregunta.usuario}}</h6>
+                    <textarea class="form-control col-md-12" name="txtDescripcion" [(ngModel)]="descripcionRespuesta" placeholder="Escribe aquí tu respuesta." aria-label="With textarea" required></textarea>
+
+
+                </div>
+
+
+                <div class=" col-md-12 row mt-2 pr-0">
+                    <div *ngIf="puedeResponder" style="width:80%  ">
+                    </div>
+
+                    <div *ngIf="puedeResponder" style="width:20%  ">
+                        <button class="btn btn-primary btn-block" (click)="guardarRespuesta()">Publicar Respuesta</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+        </mat-card>
+
+    </div>
+
+    <div class="loading  row col-md-12" *ngIf="loadingR">
+
+        <img src="./assets/images/loading.gif" style="float: none;margin: 0 auto; " />
+
+    </div>
+
+    <div *ngIf="!loadingR" class="container">
+
+        <div *ngIf="respuestas.length>0" class="container">
+            <h4>Respuestas</h4>
+        </div>
+
+        <div *ngFor="let respuesta of respuestas" class="col-sm-8 col-md-11 contact-form mb-3" style="float: left;margin: 0 auto">
+            <mat-card class="mdc-card pr-0" [class.mat-elevation-z8]="true">
+
+
+                <div class="w-100 row   pr-0  ">
+                    <div class="pl-4  " style="width: 90%">
+                        <strong> {{respuesta.nombres}} </strong> <span>  respondió el  {{respuesta.fecha_respuesta }}  </span>
+                        <div class="w-100 form-group  mt-3">
+                            <h6> {{respuesta.descripcion}}</h6>
+                        </div>
+
+                    </div>
+                    <div class="form-group   pr-0 row " style="width: 10%">
+
+
+
+                        <div class="w-50 pr-0 container">
+                            <span class="badge badge-notify ">{{respuesta.like}}</span>
+                            <img style="margin-right: 2%" src="./assets/images/like.png " width="28 " height="28 " alt=" ">
+                        </div>
+
+                        <div class="w-50 pr-0 container">
+                            <span class="badge badge-notify ">{{respuesta.dislike}}</span>
+                            <img style="margin-right: 2%" src="./assets/images/dislike.png " width="28 " height="28 " alt=" ">
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </mat-card>
+
+        </div>
+    </div>
+</div>

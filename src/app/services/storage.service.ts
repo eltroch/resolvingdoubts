@@ -46,9 +46,11 @@ export class StorageService {
   };
 
   logout(): void{
+   // console.log("lg");
     this.removeCurrentSession();
-    this.router.navigate(['/login']);
-    window.location.reload();
+    this.router.navigate(['/home']);
+
+    //window.location.reload();
    
   }
 

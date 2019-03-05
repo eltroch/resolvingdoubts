@@ -1,12 +1,25 @@
-<div class="page-wrapper">
-    <app-navbar></app-navbar>
-    <app-sidebar></app-sidebar>
-    <div align="left" class="page-content ">
+<div *ngIf="IsLogin()" class="page-wrapper">
+    <div align="left" class="page-content pt-0" style="padding-left: 17%">
 
+        <app-navbar></app-navbar>
+
+    </div>
+
+    <app-sidebar></app-sidebar>
+    <div align="left" class="page-content">
 
         <router-outlet></router-outlet>
 
     </div>
 
-    <!-- <a href="https://github.com/azouaoui-med/angular-pro-sidebar"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a> -->
+</div>
+
+
+<div *ngIf="!IsLogin()" class="page-wrapper">
+    <app-navbar></app-navbar>
+    <div class="container mt-4 ">
+        <router-outlet></router-outlet>
+
+    </div>
+
 </div>

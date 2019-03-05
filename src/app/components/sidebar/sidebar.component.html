@@ -8,7 +8,7 @@
 
             <div class="sidebar-profile ">
                 <div class="user-pic ">
-                    <img class="img-responsive img-rounded " src="/assets/images/user.jpg " alt="User picture ">
+                    <img class="img-responsive img-rounded " src="./assets/images/user.jpg " alt="User picture ">
                 </div>
                 <div class="user-info ">
                     <span class="user-name ">
@@ -27,14 +27,14 @@
                     <li *ngFor="let menu of menus " [ngClass]="{ 'active': menu.active , 'sidebar-dropdown':menu.type==='dropdown' , 'header-menu':menu.type==='header' } ">
                         <span class="btn" *ngIf="menu.type==='header' ">{{menu.title}}</span>
                         <a *ngIf="menu.type !=='header' " (click)='toggle(menu)'>
-                            <img src="../../../assets/images/{{menu.icon}}" width="24 " height="24 " alt=" ">
+                            <img src="./assets/images/{{menu.icon}}" width="24 " height="24 " alt=" ">
                             <span class="btn" style="color:whitesmoke; margin-left: 7px;">{{menu.title}}</span>
 
                         </a>
                         <div *ngIf="menu.type==='dropdown' " class="sidebar-submenu " [@slide]="getState(menu) ">
                             <ul>
                                 <li *ngFor="let submenu of menu.submenus ">
-                                    <a class="btn" routerLink="/{{submenu.ruta}}" routerLinkActive="active"> {{submenu.title}}
+                                    <a class="btn" routerLink="/{{submenu.ruta}}" routerLinkActive="router-link-active" routerLinkActive="active"> {{submenu.title}}
                     <span *ngIf="submenu.badge " class="badge badge-pill " [ngClass]="submenu.badge.class ">{{submenu.badge.text}}</span>
                   </a>
                                 </li>

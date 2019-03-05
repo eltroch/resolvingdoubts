@@ -9,8 +9,8 @@ export class ConfigService {
   urlP = 'https://bici-monteria.000webhostapp.com';
   urlD = 'http://localhost';
 
-  urlAPI = this.urlP+'/RDApi/src';
-  urlRecursos=this.urlP+'/RDApi/assets/recursos';
+  urlAPI = this.urlD+'/RDApi/src';
+  urlRecursos=this.urlD+'/RDApi/assets/recursos';
   constructor(public snackBar: MatSnackBar) { }
 
   
