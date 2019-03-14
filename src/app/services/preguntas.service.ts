@@ -61,6 +61,9 @@ export class PreguntasService {
   getPreguntasDestacadas() {
     return this.http.get(`${this.url}/destacadas`);
   }
+  getPreguntasPorMes() {
+    return this.http.get(`${this.url}/estadisticas-mes`);
+  }
   getMisPreguntas() {
     let u=this.localStorage.getUser();
     
